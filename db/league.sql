@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS matches;
+DROP TABLE IF EXISTS teams;
+
+CREATE TABLE teams (
+  id SERIAL PRIMARY KEY,
+);
+
+CREATE TABLE matches (
+  id SERIAL PRIMARY KEY,
+);
