@@ -8,7 +8,7 @@ CREATE TABLE teams (
 
 CREATE TABLE matches (
   id SERIAL PRIMARY KEY,
-  result VARCHAR(255),
-  home_team_id INT NOT NULL REFERENCES teams(id),
-  away_team_id INT NOT NULL REFERENCES teams(id)
+  home_team_id VARCHAR(255) NOT NULL,
+  away_team_id VARCHAR(255) NOT NULL,
+  result VARCHAR(255)
 );
