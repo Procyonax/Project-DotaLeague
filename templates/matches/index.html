@@ -4,12 +4,13 @@
 {% for match in all_matches %}
   <div class="match">
     <div class="content">
-      {{match.home_team_id}}{{match.away_team_id}}
+      {{match.home_team_id}} vs {{match.away_team_id}}
         <span class="result">{{match.result}}</span>
         <p>{{match.id}}</p>
-      </div>
       <div class="buttons">
-
+        <form class="edit-form" action="/matches/{{match.id}}/edit" method="GET">
+            <button class="edit-button"><i class="fa-regular fa-pen-to-square fa-3x" aria-hidden="false"></i></button>
+        </form>
         <form class="delete-form" action="/matches/{{match.id}}/delete" method="POST">
           <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button>
         </form>

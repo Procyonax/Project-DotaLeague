@@ -48,6 +48,14 @@ input, select, button {
   font-size: 65%;
 }
 
+.edit-button{
+  display: contents;
+  font-size: 65%;
+}
+
+.edit-form{
+  display: inline;
+}
 
 .delete-form{
   display: inline;

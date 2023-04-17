@@ -8,12 +8,13 @@ import repositories.team_repository as team_repository
 match_repository.delete_all()
 team_repository.delete_all()
 
-team1 = Team("Wildcats")
+team1 = Team("Evil Genuises")
 team_repository.save(team1)
-team2 = Team("Bing Chilling")
+team2 = Team("TSM")
 team_repository.save(team2)
-team3 = Team("Purdue")
+team3 = Team("Beastcoast")
 team_repository.save(team3)
+team4 = Team
 
 team_repository.select_all()
 
@@ -22,11 +23,14 @@ team_repository.select_all()
 # match1 = Match(team1.id, team2.id, "1-0")
 # match_repository.save(match1)
 
-match1 = Match("Wildcats", "Tigers", "1-1")
+match1 = Match("Evil Genuises", "TSM", "1-1")
 match_repository.save(match1)
 
-match2 = Match("Bengals", "Wildcats", "2-0")
+match2 = Match("Beastcoast", "OG", "2-0")
 match_repository.save(match2)
+
+match3 = Match("TSM", "Team Secret", "0-2")
+match_repository.save(match3)
 
 # match2 = Match(team3.team_name, team2.team_name, "0-1")
 # match_repository.save(match2)
