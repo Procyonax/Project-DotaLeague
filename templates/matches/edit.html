@@ -2,13 +2,13 @@
 {% block content %}
 <form action="/matches/{{match.id}}" method="post">
     <div>
-      <label for="home_team_id">Home Team:</label>
-      <input type="text" id="home_team_id" name="home_team_id" value="{{match.home_team_id}}" required autofocus>
+      <label for="home_team">Home Team:</label>
+      <input type="text" id="home_team" name="home_team" value="{{match.home_team.team_name}}" required autofocus>
     </div>
   
     <div>
-      <label for="away_team_id">Away Team:</label>
-      <input type="text" id="away_team_id" name="away_team_id" value="{{match.away_team_id}}" required>
+      <label for="away_team">Away Team:</label>
+      <input type="text" id="away_team" name="away_team" value="{{match.away_team.team_name}}" required>
     </div>
   
     <div>

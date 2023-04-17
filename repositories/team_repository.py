@@ -25,14 +25,17 @@ def select_all():
 
 
 def select(id):
-    print(id)
+    # print(id)
     team = None
-    sql = "SELECT * FROM teams WHERE team_name = %s"
+    sql = "SELECT * FROM teams WHERE id = %s"
     values = [id]
-    result = run_sql(sql, values)[0]
+    results = run_sql(sql, values)
+    # print(results)
 
-    if result is not None:
+    if results:
+        result = results[0]
         team = Team(result['team_name'], result['id'] )
+        # print(team)
     return team
 
 
@@ -48,7 +51,7 @@ def delete(id):
 
 
 def update(team):
-    sql = "UPDATE teams SET (team_name) = (%s) WHERE id = %s"
+    sql = "UPDATE teams SET team_name = %s WHERE id = %s"
     values = [team.team_name, team.id]
     run_sql(sql, values)
 
@@ -60,6 +63,6 @@ def matches(team):
     results = run_sql(sql, values)
 
     for row in results:
-        match = Match(row['home_team_id'], row['away_team_id'], row['result'], row['id'] )
+        match = Match(row['home_team'], row['away_team'], row['result'], row['id'] )
         matches.append(match)
     return matches

@@ -4,7 +4,7 @@
 {% for match in all_matches %}
   <div class="match">
     <div class="content">
-      {{match.home_team_id}} vs {{match.away_team_id}}
+      {{match.home_team.team_name}} vs {{match.away_team.team_name}}
         <span class="result">{{match.result}}</span>
         <p>{{match.id}}</p>
       <div class="buttons">

@@ -5,12 +5,12 @@ from models.team import Team
 import repositories.team_repository as team_repository
 
 def save(match):
-    sql = "INSERT INTO matches (home_team_id, away_team_id, result) VALUES (%s, %s, %s) RETURNING *"
-    values = [match.home_team_id, match.away_team_id, match.result]
+    sql = "INSERT INTO matches (home_team, away_team, result) VALUES (%s, %s, %s) RETURNING *"
+    values = [match.home_team, match.away_team, match.result]
     results = run_sql(sql, values)
     # print(results)
     id = results[0]['id']   
-    print(id)
+    # print(id)
     match.id = id
     return match
 
@@ -22,9 +22,9 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        # team1 = team_repository.select(row['home_team_id'])
-        # team2 = team_repository.select(row['away_team_id'])
-        match = Match(row['home_team_id'], row['away_team_id'], row['result'], row['id'] )
+        team1 = team_repository.select(row['home_team'])
+        team2 = team_repository.select(row['away_team'])
+        match = Match(team1, team2,  row['result'], row['id'] )
         matches.append(match)
     return matches
 
@@ -33,28 +33,31 @@ def select_all():
 def select(id):
     # matches = []
     # match = None
-    # sql = "SELECT * FROM matches WHERE home_team_id = %s OR away_team_id = %s"
+    # sql = "SELECT * FROM matches WHERE home_team = %s OR away_team = %s"
     # values = [id, id]
     # result = run_sql(sql, values)
 
     # for row in results:
-    #     match = Match(row['home_team_id'], row['away_team_id'], row['result'], row['id'] )
+    #     match = Match(row['home_team'], row['away_team'], row['result'], row['id'] )
     #     matches.append(match)
     # return matches
 
     # if result is not None:
-    #     # team1 = team_repository.select(result['home_team_id'])
-    #     # team2 = team_repository.select(result['away_team_id'])
-    #     match = Match(result['home_team_id'], result['away_team_id'], result['result'], result['id'] )
+    #     # team1 = team_repository.select(result['home_team'])
+    #     # team2 = team_repository.select(result['away_team'])
+    #     match = Match(result['home_team'], result['away_team'], result['result'], result['id'] )
     # return match
 
     match = None
     sql = "SELECT * FROM matches WHERE id = %s"
     values = [id]
-    result = run_sql(sql, values)[0]
+    results = run_sql(sql, values)
 
-    if result is not None:
-        match = Match(result['home_team_id'], result['away_team_id'], result['result'], result['id'] )
+    if results is not None:
+        result= results[0]
+        team1 = team_repository.select(result['home_team'])
+        team2 = team_repository.select(result['away_team'])
+        match = Match(team1, team2,  result['result'], result['id'] )
     return match
 
 
@@ -70,8 +73,8 @@ def delete(id):
 
 
 def update(match):
-    sql = "UPDATE matches SET (home_team_id, away_team_id, result) = (%s, %s, %s) WHERE id = %s"
-    values = [match.home_team_id, match.away_team_id, match.result, match.id]
+    sql = "UPDATE matches SET (home_team, away_team, result) = (%s, %s, %s) WHERE id = %s"
+    values = [match.home_team, match.away_team, match.result, match.id]
     run_sql(sql, values)
 
 

@@ -11,6 +11,7 @@ matches_blueprint = Blueprint("matches", __name__)
 @matches_blueprint.route('/matches')
 def matches():
     matches = match_repository.select_all()
+
     return render_template('/matches/index.html', all_matches = matches)
 
 # NEW
@@ -18,18 +19,15 @@ def matches():
 @matches_blueprint.route('/matches/new')
 def new_match():
     teams = team_repository.select_all()
-    return render_template("/matches/new.html", all_teams = teams)
+    return render_template("/matches/new.html", teams = teams)
 
 # CREATE
 # POST /matches/
 @matches_blueprint.route('/matches', methods=['POST'])
 def create_match():
     result = request.form['result']
-    home_team_id = request.form['home_team_id']
-    away_team_id = request.form['away_team_id']
-
-    # home_team = team_repository.select(home_team_id)
-    # away_team = team_repository.select(away_team_id)
+    home_team_id = request.form['home_team']
+    away_team_id = request.form['away_team']
     match = Match(home_team_id, away_team_id, result)
     match_repository.save(match)
 
@@ -52,23 +50,22 @@ def edit_match(id):
     return render_template('matches/edit.html', match=match, all_teams=teams)
 
 # UPDATE
-# PUT (POST) /tasks/<id>/
+# PUT (POST) /matches/<id>/
 @matches_blueprint.route('/matches/<id>', methods=['POST'])
 def update_match(id):
-    match = match_repository.select(id)
+    home_team = request.form['home_team']
+    away_team = request.form['away_team']
     result = request.form['result']
-    home_team_id = request.form['home_team_id']
-    away_team_id = request.form['away_team_id']
-
-    # home_team = team_repository.select(home_team_id)
-    # away_team = team_repository.select(away_team_id)
-    match = Match(home_team_id, away_team_id, result, id)
+    match = match_repository.select(id)
+    # home_team_id = team_repository.select(home_team)
+    # away_team_id = team_repository.select(away_team)
+    match = Match(home_team, away_team, result, id)
     match_repository.update(match)
     
     return redirect('/matches')
 
 # DELETE
-# DELETE (POST) /tasks/<id>/delete/
+# DELETE (POST) /matches/<id>/delete/
 @matches_blueprint.route('/matches/<id>/delete', methods=['POST'])
 def delete_match(id):
     match_repository.delete(id)

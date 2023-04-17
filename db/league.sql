@@ -8,9 +8,9 @@ CREATE TABLE teams (
 
 CREATE TABLE matches (
   id SERIAL PRIMARY KEY,
-  home_team_id VARCHAR(255) NOT NULL,
-  away_team_id VARCHAR(255) NOT NULL,
-  -- home_team_id INT NOT NULL REFERENCES teams(id),
-  -- away_team_id INT NOT NULL REFERENCES teams(id),
+  -- home_team VARCHAR(255) NOT NULL,
+  -- away_team VARCHAR(255) NOT NULL,
+  home_team INT REFERENCES teams(id) ON DELETE CASCADE,
+  away_team INT REFERENCES teams(id) ON DELETE CASCADE,
   result VARCHAR(255)
 );
