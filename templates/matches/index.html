@@ -1,6 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
 
+{% for match in all_matches %}
+  <div class="match">
+    <div class="content">
+      {{match.home_team_id}}{{match.away_team_id}}
+        <span class="result">{{match.result}}</span>
+        <p>{{match.id}}</p>
+      </div>
+      <div class="buttons">
+
+        <form class="delete-form" action="/matches/{{match.id}}/delete" method="POST">
+          <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+{% endfor %}    
 
 
 {% endblock %}

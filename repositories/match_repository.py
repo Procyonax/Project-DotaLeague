@@ -9,11 +9,12 @@ def save(match):
     values = [match.home_team_id, match.away_team_id, match.result]
     results = run_sql(sql, values)
     # print(results)
-    id = results[0]['id']
+    id = results[0]['id']   
+    print(id)
     match.id = id
     return match
 
-
+# Function to select all match results in league
 def select_all():
     matches = []
 
@@ -28,16 +29,31 @@ def select_all():
     return matches
 
 
-
+# Function to select all matches for a specific team
 def select(id):
+    # matches = []
+    # match = None
+    # sql = "SELECT * FROM matches WHERE home_team_id = %s OR away_team_id = %s"
+    # values = [id, id]
+    # result = run_sql(sql, values)
+
+    # for row in results:
+    #     match = Match(row['home_team_id'], row['away_team_id'], row['result'], row['id'] )
+    #     matches.append(match)
+    # return matches
+
+    # if result is not None:
+    #     # team1 = team_repository.select(result['home_team_id'])
+    #     # team2 = team_repository.select(result['away_team_id'])
+    #     match = Match(result['home_team_id'], result['away_team_id'], result['result'], result['id'] )
+    # return match
+
     match = None
     sql = "SELECT * FROM matches WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        # team1 = team_repository.select(result['home_team_id'])
-        # team2 = team_repository.select(result['away_team_id'])
         match = Match(result['home_team_id'], result['away_team_id'], result['result'], result['id'] )
     return match
 

@@ -1,6 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
-
+<form action="/matches/{{match.id}}" method="post">
+    <div>
+      <label for="home_team_id">Home Team:</label>
+      <input type="text" id="home_team_id" name="home_team_id" value="{{match.home_team_id}}" required autofocus>
+    </div>
+  
+    <div>
+      <label for="away_team_id">Away Team:</label>
+      <input type="text" id="away_team_id" name="away_team_id" value="{{match.away_team_id}}" required>
+    </div>
+  
+    <div>
+        <label for="result">Match Result:</label>
+        <input type="text" id="result" name="result" value="{{match.result}}" required>
+    </div>
+  
+  <button type="submit">Update match</button>
+  
+  </form>
 
 
 {% endblock %}

@@ -1,5 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
 
+<form action="/matches" method="post">
+    <div>
+      <label for="home_team_id">Home Team:</label>
+      <input type="text" id="home_team_id" name="home_team_id" placeholder="Home Team" required autofocus>
+    </div>
+  
+    <div>
+      <label for="away_team_id">Away Team:</label>
+      <input type="text" id="away_team_id" name="away_team_id" placeholder="Away Team" required>
+    </div>
+  
+    <div>
+      <label for="result">Result:</label>
+      <input type="text" id="result" name="result" placeholder="Result" required>
+    </div>
+  
+    <button type="submit">Add match</button>
+  
+  </form>
 
 {% endblock %}

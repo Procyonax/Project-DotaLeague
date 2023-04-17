@@ -28,9 +28,9 @@ def create_match():
     home_team_id = request.form['home_team_id']
     away_team_id = request.form['away_team_id']
 
-    home_team = team_repository.select(home_team_id)
-    away_team = team_repository.select(away_team_id)
-    match = Match(home_team, away_team, result)
+    # home_team = team_repository.select(home_team_id)
+    # away_team = team_repository.select(away_team_id)
+    match = Match(home_team_id, away_team_id, result)
     match_repository.save(match)
 
     return redirect('/matches')
@@ -47,6 +47,7 @@ def show_match(id):
 @matches_blueprint.route('/matches/<id>/edit')
 def edit_match(id):
     match = match_repository.select(id)
+    print(match)
     teams = team_repository.select_all()
     return render_template('matches/edit.html', match=match, all_teams=teams)
 
@@ -54,16 +55,17 @@ def edit_match(id):
 # PUT (POST) /tasks/<id>/
 @matches_blueprint.route('/matches/<id>', methods=['POST'])
 def update_match(id):
+    match = match_repository.select(id)
     result = request.form['result']
     home_team_id = request.form['home_team_id']
     away_team_id = request.form['away_team_id']
 
-    home_team = team_repository.select(home_team_id)
-    away_team = team_repository.select(away_team_id)
-    match = Match(home_team, away_team, result)
+    # home_team = team_repository.select(home_team_id)
+    # away_team = team_repository.select(away_team_id)
+    match = Match(home_team_id, away_team_id, result, id)
     match_repository.update(match)
     
-    return redirect('/tasks')
+    return redirect('/matches')
 
 # DELETE
 # DELETE (POST) /tasks/<id>/delete/

@@ -10,5 +10,7 @@ CREATE TABLE matches (
   id SERIAL PRIMARY KEY,
   home_team_id VARCHAR(255) NOT NULL,
   away_team_id VARCHAR(255) NOT NULL,
+  -- home_team_id INT NOT NULL REFERENCES teams(id),
+  -- away_team_id INT NOT NULL REFERENCES teams(id),
   result VARCHAR(255)
 );
