@@ -18,6 +18,14 @@ team4 = Team("Team Secret")
 team_repository.save(team4)
 team5 = Team("OG")
 team_repository.save(team5)
+team6 = Team("Gaiman Gladiators")
+team_repository.save(team6)
+team7 = Team("Shopify Rebellion")
+team_repository.save(team7)
+team8 = Team("Team Liquid")
+team_repository.save(team8)
+team9 = Team("Tundra Esports")
+team_repository.save(team9)
 
 team_repository.select_all()
 
@@ -28,6 +36,15 @@ match_repository.save(match1)
 
 match2 = Match(team1.id, team2.id, "1-1") 
 match_repository.save(match2)
+
+match3 = Match(team9.id, team7.id, "1-0")
+match_repository.save(match3)
+
+match4 = Match(team5.id, team8.id, "0-1") 
+match_repository.save(match4)
+
+match5 = Match(team7.id, team6.id, "0-1")
+match_repository.save(match5)
 
 # match1 = Match("Evil Genuises", "TSM", "1-1")
 # match_repository.save(match1)

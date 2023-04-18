@@ -5,9 +5,9 @@
   <div class="match">
     <div class="content">
       {{match.home_team.team_name}} vs {{match.away_team.team_name}}
-        <span class="result">{{match.result}}</span>
         <p>Match #{{match.id}}</p>
       <div class="buttons">
+        <span class="result">{{match.result}}</span>
         <form class="edit-form" action="/matches/{{match.id}}/edit" method="GET">
             <button class="edit-button"><i class="fa-regular fa-pen-to-square fa-3x" aria-hidden="false"></i></button>
         </form>
@@ -20,5 +20,6 @@
   </div>
 {% endfor %}    
 
-
 {% endblock %}
+
+<footer hidden="hidden">
