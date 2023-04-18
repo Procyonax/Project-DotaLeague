@@ -1,9 +1,17 @@
 body{
-  font-family: "Helvetica", arial, sans-serif; font-size: 16px;
+  font-family: "Helvetica", arial, sans-serif; font-size: 16px; color: azure; text-shadow: rgb(0, 0, 0) 3px 0px 0px, rgb(0, 0, 0) 2.83487px 0.981584px 0px, rgb(0, 0, 0) 2.35766px 1.85511px 0px, rgb(0, 0, 0) 1.62091px 2.52441px 0px, rgb(0, 0, 0) 0.705713px 2.91581px 0px, rgb(0, 0, 0) -0.287171px 2.98622px 0px, rgb(0, 0, 0) -1.24844px 2.72789px 0px, rgb(0, 0, 0) -2.07227px 2.16926px 0px, rgb(0, 0, 0) -2.66798px 1.37182px 0px, rgb(0, 0, 0) -2.96998px 0.42336px 0px, rgb(0, 0, 0) -2.94502px -0.571704px 0px, rgb(0, 0, 0) -2.59586px -1.50383px 0px, rgb(0, 0, 0) -1.96093px -2.27041px 0px, rgb(0, 0, 0) -1.11013px -2.78704px 0px, rgb(0, 0, 0) -0.137119px -2.99686px 0px, rgb(0, 0, 0) 0.850987px -2.87677px 0px, rgb(0, 0, 0) 1.74541px -2.43999px 0px, rgb(0, 0, 0) 2.44769px -1.73459px 0px, rgb(0, 0, 0) 2.88051px -0.838247px 0px;
+}
+
+.splash {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 }
 
 .match {
   border: 1px solid #ccc;
+  background: white;
   width: 300px;
   min-height: 68px;
   padding: 10px;
@@ -13,14 +21,22 @@ body{
 }
 
 .team {
+  border: 1px solid #ccc;
+  background: white;
   font-weight: bold;
+  width: 300px;
+  min-height: 68px;
+  padding: 10px;
+  display: flex;
+  line-height: 18px;
   margin-bottom: 0.5em;
   margin-right: 0.3em;
 }
 
 .result{
   color: #8899a6;
-  font-size: 13px;
+  text-shadow: none;
+  font-size: 18px;
   margin-left: 20px;
 }
 
@@ -64,6 +80,8 @@ input, select, button {
 .menu{
   display: flex;
   padding: 10px;
+  margin: 0;
+  margin-bottom: 10px;
   background-color: grey;
   color: white;
 }
@@ -88,4 +106,26 @@ input, select, button {
   flex-wrap: wrap;
   width: 300px;
   margin: 0 auto;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react//home/radiant_dire5.jpg");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.hyperlink {
+  text-shadow: none;
 }

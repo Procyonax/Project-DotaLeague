@@ -35,7 +35,7 @@ def create_match():
 
 # SHOW
 # GET /matches/<id>/
-@matches_blueprint.route('/matches/<id>')
+@matches_blueprint.route('/matches/<id>/show')
 def show_match(id):
     match = match_repository.select(id)
     return render_template('matches/show.html', match=match)

@@ -1,11 +1,32 @@
 {% extends "base.html" %}
 {% block content %}
+<form action="/teams/{{team.id}}" method="post">
+  
+  <div class="team">
+    <div class="content">
+      {{team.team_name}}
+        <p>{{team.id}}</p>
+      <div class="buttons">
+        <form class="edit-form" action="/teams/{{team.id}}/edit" method="GET">
+            <button class="edit-button"><i class="fa-regular fa-pen-to-square fa-3x" aria-hidden="false"></i></button>
+        </form>
+        <form class="delete-form" action="/teams/{{team.id}}/delete" method="POST">
+          <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button>
+        </form>
 
-<div>
-    <p>{{team.id}}</p>
-    <hr>
-    <p>{{team.team_name}}</p>
-    <p><a href="/teams/{{team.id}}/edit">Edit</a></p>
+      </div>
+    </div>
   </div>
+   
+  {% for match in all_matches %}
+  <div class="team">
+    <div class="content">
+      {{match.home_team.team_name}} vs {{match.away_team.team_name}}
+        <span class="result">{{match.result}}</span>
+        <p>Match #{{match.id}}</p>
+    </div>
+  </div>      
+  {% endfor %}
 
+</form>
 {% endblock %}

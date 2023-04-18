@@ -5,7 +5,10 @@
   <div class="team">
     <div class="content">
       {{team.team_name}}
-        <p>{{team.id}}</p>
+        <p></p>
+        <div class="hyperlink">
+        <a href="/teams/{{team.id}}/show">Team Info</a>
+        </div>
       <div class="buttons">
         <form class="edit-form" action="/teams/{{team.id}}/edit" method="GET">
             <button class="edit-button"><i class="fa-regular fa-pen-to-square fa-3x" aria-hidden="false"></i></button>

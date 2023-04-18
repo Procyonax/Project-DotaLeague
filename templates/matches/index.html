@@ -6,7 +6,7 @@
     <div class="content">
       {{match.home_team.team_name}} vs {{match.away_team.team_name}}
         <span class="result">{{match.result}}</span>
-        <p>{{match.id}}</p>
+        <p>Match #{{match.id}}</p>
       <div class="buttons">
         <form class="edit-form" action="/matches/{{match.id}}/edit" method="GET">
             <button class="edit-button"><i class="fa-regular fa-pen-to-square fa-3x" aria-hidden="false"></i></button>
