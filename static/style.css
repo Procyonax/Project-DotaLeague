@@ -7,15 +7,30 @@ body {
   justify-content: center;
   align-items: center;
   padding: 10px;
+  opacity: 0;
   animation: fadeInAnimation ease 3s;
   animation-iteration-count: 1;
   animation-duration: 3s;
+  animation-delay: 2s;
   animation-fill-mode: forwards;
 }
 
 .splashtext {
+  text-align: center;
+  font-size: 32px;
+  opacity: 0;
   animation: fadeInAnimation ease 3s;
   animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+.splashsubtext {
+  font-size: 20px;
+  opacity: 0;
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-duration: 3s;
+  animation-delay: 4s;
   animation-fill-mode: forwards;
 }
 
