@@ -4,7 +4,6 @@
 <form action="/matches" method="post">
     <div>
       <label for="home_team">Home Team:</label>
-      <!-- <input type="text" id="home_team" name="home_team" placeholder="Home Team" required autofocus> -->
       <select id = "home_team" name="home_team">
         {% for team in teams %}
         <option value="{{team.id}}">{{team.team_name}}</option>
@@ -14,7 +13,6 @@
   
     <div>
       <label for="away_team">Away Team:</label>
-      <!-- <input type="text" id="away_team" name="away_team" placeholder="Away Team" required> -->
       <select id = "away_team" name="away_team">
         {% for team in teams %}
         <option value="{{team.id}}">{{team.team_name}}</option> 
@@ -27,7 +25,7 @@
       <input type="text" id="result" name="result" placeholder="Result" required>
     </div>
   
-    <button type="submit">Add match</button>
+    <button type="submit">Add Match</button>
   
   </form>
 

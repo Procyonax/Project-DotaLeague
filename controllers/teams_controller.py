@@ -36,7 +36,8 @@ def create_team():
 @teams_blueprint.route('/teams/<id>/show')
 def show_team(id):
     team = team_repository.select(id)
-    return render_template('teams/show.html', team=team)
+    matches = match_repository.select_all()
+    return render_template('teams/show.html', team=team, all_matches=matches)
 
 # EDIT
 # GET /teams/<id>/edit/
