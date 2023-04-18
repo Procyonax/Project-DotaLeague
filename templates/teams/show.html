@@ -19,13 +19,18 @@
   </div>
    
   {% for match in all_matches %}
-  <div class="match">
-    <div class="content">
-      {{match.home_team.team_name}} vs {{match.away_team.team_name}}
-        <span class="result">{{match.result}}</span>
-        <p>Match #{{match.id}}</p>
-    </div>
-  </div>      
+    {% if match.home_team.id == team.id or match.away_team.id == team.id   %}
+      
+    
+    <div class="match">
+      <div class="content">
+        {{match.home_team.team_name}} vs {{match.away_team.team_name}}
+          <span class="result">{{match.result}}</span>
+          <p>Match #{{match.id}}</p>
+      </div>
+    </div>  
+    {% else %}
+    {% endif %}
   {% endfor %}
 
 </form>
