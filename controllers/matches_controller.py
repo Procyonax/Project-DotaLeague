@@ -45,9 +45,8 @@ def show_match(id):
 @matches_blueprint.route('/matches/<id>/edit')
 def edit_match(id):
     match = match_repository.select(id)
-    print(match)
     teams = team_repository.select_all()
-    return render_template('matches/edit.html', match=match, all_teams=teams)
+    return render_template('matches/edit.html', match=match, teams=teams)
 
 # UPDATE
 # PUT (POST) /matches/<id>/
