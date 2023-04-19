@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<form action="/teams/{{team.id}}" method="post">
+
   
   <div class="team">
     <div class="content">
@@ -34,4 +34,10 @@
   {% endfor %}
 
 </form>
+
+<style>
+  .footer {
+    display: none;
+  }
+</style>
 {% endblock %}

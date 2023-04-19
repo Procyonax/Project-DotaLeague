@@ -4,7 +4,7 @@
 {% for team in all_teams %}
   <div class="team">
     <div class="content">
-      {{team.team_name}}
+      {{team.team_name}} 
         <p></p>
         <div class="hyperlink">
         <a href="/teams/{{team.id}}/show">Team Info</a>
@@ -22,5 +22,10 @@
   </div>
 {% endfor %}    
 
+<style>
+  .footer {
+    display: none;
+  }
+</style>
 
 {% endblock %}
