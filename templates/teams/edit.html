@@ -1,21 +1,23 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 <form action="/teams/{{team.id}}" method="post">
-    
-  
-    <div>
-        <label for="team_name">New Team:</label>
-        <input type="text" id="team_name" name="team_name" value="{{team.team_name}}" required>
-    </div>
-  
-  <button type="submit">Update Team</button>
-  
-  </form>
+  <div>
+    <label for="team_name">New Team:</label>
+    <input
+      type="text"
+      id="team_name"
+      name="team_name"
+      value="{{team.team_name}}"
+      required
+    />
+  </div>
 
-  <style>
-    .footer {
-      display: none;
-    }
-  </style>
+  <button type="submit">Update Team</button>
+</form>
+
+<style>
+  .footer {
+    display: none;
+  }
+</style>
 
 {% endblock %}

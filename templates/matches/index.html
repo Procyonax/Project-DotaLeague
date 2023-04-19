@@ -1,24 +1,32 @@
-{% extends "base.html" %}
-{% block content %}
-
-{% for match in all_matches %}
-  <div class="match">
-    <div class="content">
-      {{match.home_team.team_name}} vs {{match.away_team.team_name}}
-        <p>Match #{{match.id}}</p>
-      <div class="buttons">
-        <span class="result">{{match.result}}</span>
-        <form class="edit-form" action="/matches/{{match.id}}/edit" method="GET">
-            <button class="edit-button"><i class="fa-regular fa-pen-to-square fa-3x" aria-hidden="false"></i></button>
-        </form>
-        <form class="delete-form" action="/matches/{{match.id}}/delete" method="POST">
-          <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button>
-        </form>
-
-      </div>
+{% extends "base.html" %} {% block content %} {% for match in all_matches %}
+<div class="match">
+  <div class="content">
+    {{match.home_team.team_name}} vs {{match.away_team.team_name}}
+    <p>Match #{{match.id}}</p>
+    <div class="buttons">
+      <span class="result">{{match.result}}</span>
+      <form class="edit-form" action="/matches/{{match.id}}/edit" method="GET">
+        <button class="edit-button">
+          <i class="fa-regular fa-pen-to-square fa-3x" aria-hidden="false"></i>
+        </button>
+      </form>
+      <form
+        class="delete-form"
+        action="/matches/{{match.id}}/delete"
+        method="POST"
+      >
+        <button class="trash-button">
+          <i
+            class="fa fa-trash-o fa-3x"
+            style="color: red"
+            aria-hidden="true"
+          ></i>
+        </button>
+      </form>
     </div>
   </div>
-{% endfor %}    
+</div>
+{% endfor %}
 
 <style>
   .footer {
@@ -28,4 +36,4 @@
 
 {% endblock %}
 
-<footer hidden="hidden">
+<footer hidden="hidden"></footer>

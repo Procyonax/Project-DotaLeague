@@ -1,19 +1,18 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
 <div>
-    <p>{{match.id}}</p>
-    <hr>
-    <p>{{match.team.home_team}}</p>
-    <p>{{match.team.away_team}}</p>
-    <p>Result: {{match.result}}</p>
-    <p><a href="/matches/{{match.id}}/edit">Edit</a></p>
-  </div>
+  <p>{{match.id}}</p>
+  <hr />
+  <p>{{match.team.home_team}}</p>
+  <p>{{match.team.away_team}}</p>
+  <p>Result: {{match.result}}</p>
+  <p><a href="/matches/{{match.id}}/edit">Edit</a></p>
+</div>
 
-  <style>
-    .footer {
-      display: none;
-    }
-  </style>
+<style>
+  .footer {
+    display: none;
+  }
+</style>
 
 {% endblock %}

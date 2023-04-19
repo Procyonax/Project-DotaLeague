@@ -1,38 +1,42 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
 <form action="/matches" method="post">
-    <div>
-      <label for="home_team">Home Team:</label>
-      <select id = "home_team" name="home_team">
-        {% for team in teams %}
-        <option value="{{team.id}}">{{team.team_name}}</option>
-        {% endfor %}
-      </select>
-    </div>
-  
-    <div>
-      <label for="away_team">Away Team:</label>
-      <select id = "away_team" name="away_team">
-        {% for team in teams %}
-        <option value="{{team.id}}">{{team.team_name}}</option> 
-        {% endfor %}
-      </select>
-    </div>
-  
-    <div>
-      <label for="result">Result:</label>
-      <input type="text" id="result" name="result" placeholder="Result" required>
-    </div>
-  
-    <button type="submit">Add Match</button>
-  
-  </form>
+  <div>
+    <label for="home_team">Home Team:</label>
+    <select id="home_team" name="home_team">
+      {% for team in teams %}
+      <option value="{{team.id}}">{{team.team_name}}</option>
+      {% endfor %}
+    </select>
+  </div>
 
-  <style>
-    .footer {
-      display: none;
-    }
-  </style>
+  <div>
+    <label for="away_team">Away Team:</label>
+    <select id="away_team" name="away_team">
+      {% for team in teams %}
+      <option value="{{team.id}}">{{team.team_name}}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div>
+    <label for="result">Result:</label>
+    <input
+      type="text"
+      id="result"
+      name="result"
+      placeholder="Result"
+      required
+    />
+  </div>
+
+  <button type="submit">Add Match</button>
+</form>
+
+<style>
+  .footer {
+    display: none;
+  }
+</style>
 
 {% endblock %}

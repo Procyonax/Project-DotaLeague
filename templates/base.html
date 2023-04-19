@@ -1,40 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script src="https://kit.fontawesome.com/705586972b.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  <title>Dota League, Season 10</title>
-</head>
-<body>
-  <header>  
-    <nav>
-      <ul class="menu">
-        <li><a href="/">Home</a></li>
-        <li><a href="/matches">Matches</a></li>
-        <li><a href="/matches/new">New Match</a></li>
-        <li><a href="/teams">Teams</a></li>
-        <li><a href="/teams/new">New Team</a></li>
-      </ul>
-    </nav>
-  </header>
-  <div class="container">
-    {% block content %}
-    {% endblock %}
-  </div>
-  <footer class="footer">
-    <div class="logos">
-      <img src="https://github.com/lootmarket/esport-team-logos/blob/master/dota-2/tsm/tsm-logo.png?raw=true"/>
-      <img src="https://github.com/lootmarket/esport-team-logos/blob/master/dota-2/liquid/liquid-logo.png?raw=true"/>
-      <img src="https://github.com/lootmarket/esport-team-logos/blob/master/dota-2/gaimin-gladiators/gaimin-gladiators-logo.png?raw=true"/>
-      <img src="https://github.com/lootmarket/esport-team-logos/blob/master/dota-2/tundra/tundra-logo.png?raw=true"/>
-      <img src="https://github.com/lootmarket/esport-team-logos/blob/master/dota-2/og/og-logo.png?raw=true"/> 
-      <img src="https://github.com/lootmarket/esport-team-logos/blob/master/dota-2/evil-geniuses/evil-geniuses-logo.png?raw=true"/>
-      <img src="https://github.com/lootmarket/esport-team-logos/blob/master/dota-2/shopify-rebellion/shopify-rebellion-logo.png?raw=true"/>
-      <img src="https://github.com/lootmarket/esport-team-logos/blob/master/dota-2/beastcoast/beastcoast-logo.png?raw=true"/>
-    </div>
-  </footer>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script
+      src="https://kit.fontawesome.com/705586972b.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>Dota League, Season 10</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/matches">Matches</a></li>
+          <li><a href="/matches/new">New Match</a></li>
+          <li><a href="/teams">Teams</a></li>
+          <li><a href="/teams/new">New Team</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">{% block content %} {% endblock %}</div>
+    <footer class="footer">
+      <div class="logos">
+        <img
+          src="https://github.com/lootmarket/esport-team-logos/blob/master/dota-2/tsm/tsm-logo.png?raw=true"
+        />
+        <img
+          src="https://github.com/lootmarket/esport-team-logos/blob/master/dota-2/liquid/liquid-logo.png?raw=true"
+        />
+        <img
+          src="https://github.com/lootmarket/esport-team-logos/blob/master/dota-2/gaimin-gladiators/gaimin-gladiators-logo.png?raw=true"
+        />
+        <img
+          src="https://github.com/lootmarket/esport-team-logos/blob/master/dota-2/tundra/tundra-logo.png?raw=true"
+        />
+        <img
+          src="https://github.com/lootmarket/esport-team-logos/blob/master/dota-2/og/og-logo.png?raw=true"
+        />
+        <img
+          src="https://github.com/lootmarket/esport-team-logos/blob/master/dota-2/evil-geniuses/evil-geniuses-logo.png?raw=true"
+        />
+        <img
+          src="https://github.com/lootmarket/esport-team-logos/blob/master/dota-2/shopify-rebellion/shopify-rebellion-logo.png?raw=true"
+        />
+        <img
+          src="https://github.com/lootmarket/esport-team-logos/blob/master/dota-2/beastcoast/beastcoast-logo.png?raw=true"
+        />
+      </div>
+    </footer>
+  </body>
 </html>
