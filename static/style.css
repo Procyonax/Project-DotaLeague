@@ -107,6 +107,7 @@ body {
 
 .buttons i {
   width: 40px;
+  text-align: right;
 }
 
 input,

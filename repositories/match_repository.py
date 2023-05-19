@@ -78,3 +78,12 @@ def update(match):
     run_sql(sql, values)
 
 
+
+    # Name a function called 'select_all' which will first generate an empty list named 'matches'
+    # Execute SQL query to select all matches from the database
+    # Iterate over each row in the query results
+        # Retrieve home team and away team objects from the 'team_repository'
+            # Create a 'Match' object with the retrieved teams and match result data
+        # Add the 'Match' object to the list of matches
+    # Return the list of 'Match' objects
+
